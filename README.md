@@ -1,74 +1,29 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: 周涛
- * @Date: 2021-07-14 17:07:14
- * @LastEditors: 周涛
- * @LastEditTime: 2021-07-14 17:08:02
--->
-# vue-admin
+# vue2-pro
 
-## 项目
-### 安装依赖
+## Project setup
 ```
-npm install
+yarn install
 ```
 
-###  development 模式启动
+### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### production 模式构建
-```
-npm run build
-```
-### production 模式打包体积分析
-```
-npm run analyze
-```
-### eslint 检查
-```
-npm run lint
+yarn serve
 ```
 
-### 组件生成
+### Compiles and minifies for production
 ```
-npm run new:comp
+yarn build
 ```
-### 页面组件生成
-```
-npm run new:view
-```
-## 系统组件
-1. [x] 数字渐变
-2. [x] 树状表格
-3. [x] 拖拽列表
-4. [x] Markdown 编辑器
-5. [x] 富文本编辑器
-6. [ ] 树状下拉选择器 -- 开发中
-7. [ ] 可拖动抽屉
-8. [ ] 图片裁剪
-9. [x] 国际化
-10. [ ] ...
 
-## 系统功能
-### 已完成的功能
-1. [x] 自动注册全局组件
-2. [x] 自动扫描路由
-3. [x] 支持使用svg图片
-4. [x] `axios` 封装
-5. [x] `scss` 常用函数,类
-6. [x] `GZIP`压缩
-7. [x] 第三方库`cdn`
-8. [x] 支持全站`js`,`css` 上传到七牛`cdn`
-9. [ ] ~~移动端 `rem` 适配~~
-10. [x] 打包 `production` 环境清除 `console`
-11. [x] sprites 精灵图自动合成，支持分组
-12. [x] 图片压缩
-13. [x] Mock数据
-### 未完成的功能
-1. [ ] 第三方库打包成 dll 引用
-2. [ ] 过滤器
-3. [ ] ...
+### Run your unit tests
+```
+yarn test:unit
+```
 
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
