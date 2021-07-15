@@ -7,7 +7,8 @@
  * @LastEditTime: 2021-07-15 00:45:08
  */
 import Vue from 'vue'
-import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside } from 'element-ui'
+import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton } from 'element-ui'
+import '@/assets/stylues/element-variables.scss'
 
 Vue.component(Card.name, Card)
 Vue.component(Button.name, Button)
@@ -29,6 +30,14 @@ Vue.component(Container.name, Container)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Aside.name, Aside)
+
+Vue.component(Menu.name, Menu)
+Vue.component(Submenu.name, Submenu)
+Vue.component(MenuItem.name, MenuItem)
+Vue.component(MenuItemGroup.name, MenuItemGroup)
+Vue.component(Radio.name, Radio)
+Vue.component(RadioGroup.name, RadioGroup)
+Vue.component(RadioButton.name, RadioButton)
 
 Vue.prototype.$message = Message
 

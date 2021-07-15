@@ -9,7 +9,11 @@
 export default [
   {
     path: '/home',
-    redirect: '/',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/home.vue')
+    // redirect: '/login',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/home.vue'),
+    meta: {
+      layout: 'home',
+      titile: '首页'
+    }
   }
 ]

@@ -24,6 +24,7 @@ routerContext.keys().forEach(route => {
     * 兼容import export 和 require module.export 两种规范
   */
   routes = [...routes, ...(routerModule.default || routerModule)]
+  // console.log('+++++++++routes', routes)
 })
 
 export default new Router({

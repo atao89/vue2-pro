@@ -8,14 +8,40 @@
 -->
 <template>
   <div id="app">
-    <home />
+    <component :is="layout">
+      <router-view v-if="isRouterAlive"/>
+    </component>
   </div>
 </template>
 <script>
-import home from '@/views/home.vue'
 export default {
-  name: 'app',
-  components: { home }
+  name: 'App',
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
+  data () {
+    return {
+      // 设置layout
+      default_layout: 'default',
+      isRouterAlive: true
+    }
+  },
+  computed: {
+    layout () {
+      return this.$route.meta.layout ? (this.$route.meta.layout) + '-layout' : 'default-layout'
+    }
+  },
+  methods: {
+    // 通过声明reload方法，控制router-view的显示或隐藏，从而控制页面的再次加载
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(function () {
+        this.isRouterAlive = true
+      })
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -28,7 +54,6 @@ html, body {
 }
 #app {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 }
 </style>
