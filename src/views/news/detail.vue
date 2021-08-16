@@ -5,7 +5,7 @@
   </template>
   <script>
   export default {
-    name: 'detail'
+    name: 'Detail'
   }
   </script>
   <style lang="scss" scoped>

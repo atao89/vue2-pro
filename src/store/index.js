@@ -14,6 +14,13 @@ export default new Vuex.Store({
     [types.MENU_COLLAPSE]: false,
     [types.BREADCRUMB_ITEMS]: [],
     [types.MENU_STYLE]: {
+      custom: {
+        backgroundColor: '#d8222a',
+        textColor: 'rgba(255, 255, 255, .85)',
+        activeTextColor: '#fff',
+        logoBackgroundColor: '#fff',
+        logoColor: '#1890ff'
+      },
       light: {
         backgroundColor: '#fff',
         textColor: 'rgba(0, 0, 0, .65)',
@@ -29,7 +36,7 @@ export default new Vuex.Store({
         logoColor: '#fff'
       }
     },
-    [types.CURRENT_MENU_STYLE]: 'light',
+    [types.CURRENT_MENU_STYLE]: 'custom',
     [types.SVG_ICON_NAME]: [],
     /**
      * 用户信息

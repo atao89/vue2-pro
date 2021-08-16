@@ -1,20 +1,16 @@
 <template>
-  <div class="login">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-main>
-        <router-view />
-      </el-main>
-    </el-container>
-  </div>
+  <el-container class="login-container">
+    <el-main>
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
 <script>
 </script>
 
-<style>
-.login {
-  height: 100%;
-  display: flex;
-}
+<style lang="scss" scoped>
+  .login-container {
+    height: 100%;
+  }
 </style>

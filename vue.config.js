@@ -1,11 +1,3 @@
-/*
- * @Descripttion: ''
- * @version: ''
- * @Author: 周涛
- * @Date: 2021-07-14 22:00:26
- * @LastEditors: 周涛
- * @LastEditTime: 2021-07-14 23:12:58
- */
 module.exports = {
   chainWebpack: config => {
     // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
@@ -13,5 +5,12 @@ module.exports = {
       args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
       return args
     })
-  }
+  },
+  lintOnSave: false,
+  devServer: {
+    overlay: {
+      warning: false,
+      errors: false
+    }
+  },
 }

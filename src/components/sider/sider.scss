@@ -1,6 +1,6 @@
 $logoH: 65px;
 .sider {
-  min-height: 100vh;
+  // min-height: 100vh;
   box-shadow: 1px 0 4px rgba(0,21,41,.08);
   &-logo {
     height: $logoH;
@@ -15,8 +15,9 @@ $logoH: 65px;
     border-right: 0;
   }
   .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 256px;
-    min-height: 400px;
+    // width: 256px;
+    width: 200px;
+    // min-height: 400px;
   }
   .menu-dark {
     .el-menu-item.is-active {

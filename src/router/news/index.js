@@ -9,6 +9,7 @@
 export default [
   {
     path: '/news',
+    name: 'Name',
     component: () => import(/* webpackChunkName: "news" */ '@/views/news/index.vue')
   }
 ]

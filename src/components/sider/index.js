@@ -26,13 +26,16 @@ export default {
       return menus.map(menu => {
         if (menu.children) {
           return (
-            <el-submenu index={menu.path}>
-              <template slot="title">
-                <span>{menu.label}</span>
-              </template>
-              {this.renderMenu(menu.children)}
-            </el-submenu>
+            <div>{this.getCurrentMenuStyle}</div>
           )
+          // return (
+          //   <el-submenu index={menu.path}>
+          //     <template slot="title">
+          //       <span>{menu.label}</span>
+          //     </template>
+          //     {this.renderMenu(menu.children)}
+          //   </el-submenu>
+          // )
         } else {
           return (
             <el-menu-item index={menu.path}>
