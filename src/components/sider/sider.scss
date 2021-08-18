@@ -20,9 +20,13 @@ $logoH: 65px;
     // min-height: 400px;
   }
   .menu-dark {
+    // .el-menu-item.is-active {
+    //   background-color: var(--theme-color) !important;
+    //   color: #fff !important;
+    // }
     .el-menu-item.is-active {
-      background-color: var(--theme-color) !important;
-      color: #fff !important;
+      background-color: #ef4951 !important;
+      font-weight: bold;
     }
   }
   .menu-light {

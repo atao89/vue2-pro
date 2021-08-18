@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: ''
+ * @version: ''
+ * @Author: 周涛
+ * @Date: 2021-08-16 18:53:16
+ * @LastEditors: 周涛
+ * @LastEditTime: 2021-08-16 19:57:22
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -16,10 +24,10 @@ export default new Vuex.Store({
     [types.MENU_STYLE]: {
       custom: {
         backgroundColor: '#d8222a',
-        textColor: 'rgba(255, 255, 255, .85)',
-        activeTextColor: '#fff',
-        logoBackgroundColor: '#fff',
-        logoColor: '#1890ff'
+        textColor: '#fff',
+        activeTextColor: 'rgba(255, 255, 255, .85)',
+        logoBackgroundColor: '#f60',
+        logoColor: '#58bc58'
       },
       light: {
         backgroundColor: '#fff',

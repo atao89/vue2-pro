@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: ''
+ * @version: ''
+ * @Author: 周涛
+ * @Date: 2021-08-16 18:53:16
+ * @LastEditors: 周涛
+ * @LastEditTime: 2021-08-16 20:03:30
+-->
 <template>
   <div class="login">
     <div class="login-title">登录Page</div>
@@ -60,7 +68,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           sessionStorage.setItem('USER_INFO', this.$refs[formName].model.account);
-          this.$router.push("/");
+          this.$router.push("/home");
         } else {
           this.$message.error('账号或密码错误!');
           return false;

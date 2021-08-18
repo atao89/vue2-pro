@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: ''
+ * @version: ''
+ * @Author: 周涛
+ * @Date: 2021-08-16 18:53:16
+ * @LastEditors: 周涛
+ * @LastEditTime: 2021-08-16 19:13:37
+ */
 import { mapGetters } from 'vuex'
 import menuConfig from '@/config/DynamicRoutes'
 import './sider.scss'
@@ -26,16 +34,13 @@ export default {
       return menus.map(menu => {
         if (menu.children) {
           return (
-            <div>{this.getCurrentMenuStyle}</div>
+            <el-submenu index={menu.path}>
+              <template slot="title">
+                <span>{menu.label}</span>
+              </template>
+              {this.renderMenu(menu.children)}
+            </el-submenu>
           )
-          // return (
-          //   <el-submenu index={menu.path}>
-          //     <template slot="title">
-          //       <span>{menu.label}</span>
-          //     </template>
-          //     {this.renderMenu(menu.children)}
-          //   </el-submenu>
-          // )
         } else {
           return (
             <el-menu-item index={menu.path}>
