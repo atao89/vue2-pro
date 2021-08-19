@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-18 16:04:45
+ * @LastEditTime: 2021-08-19 17:23:14
 -->
 <template>
   <div class="login">
@@ -68,7 +68,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          sessionStorage.setItem('USER_INFO', this.$refs[formName].model.account);
+          this.ls.setStore('USER_INFO', this.$refs[formName].model.account);
           this.$router.push("/home");
         } else {
           // console.log(this.$refs[formName].model);
@@ -104,7 +104,7 @@ export default {
 
   .login-box {
     width: 25%;
-    height: 25%;
+    min-height: 25%;
     padding: 20px;
     padding-top: 50px;
     background: #fff;

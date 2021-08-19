@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-07-14 22:19:59
+ * @LastEditTime: 2021-08-19 18:13:38
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -27,8 +27,20 @@ routerContext.keys().forEach(route => {
   // console.log('+++++++++routes', routes)
 })
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: routes
 })
+
+// 对将要进入的路由进行权判断
+router.beforeEach((to, from, next) => {
+  // console.log(to,from);
+  if (to.path.indexOf('login') < 0 && !window.localStorage.getItem('USER_INFO')) {
+      router.replace('/login');
+      next();
+  }
+  next();
+})
+
+export default router;

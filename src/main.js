@@ -4,33 +4,27 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-10 15:38:10
+ * @LastEditTime: 2021-08-19 18:08:03
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/stylues/common.scss'
 import './components'
 import './lib/element-ui'
+import ls from './utils/storage'
 import DefaultLayout from './layout/default'
 import HomeLayout from './layout/home'
 import LoginLayout from './layout/login'
+import './assets/stylues/common.scss'
 
 Vue.component('default-layout', DefaultLayout)
 Vue.component('home-layout', HomeLayout)
 Vue.component('login-layout', LoginLayout)
 
+Vue.prototype.ls = ls;
+
 Vue.config.productionTip = false
-// 对将要进入的路由进行权判断
-router.beforeEach((to, from, next) => {
-  // console.log(to,from);
-  if (to.path.indexOf('login') < 0 && !window.sessionStorage.getItem('USER_INFO')) {
-      router.replace('login');
-      next();
-  }
-  next();
-})
 
 new Vue({
   router,
