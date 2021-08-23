@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-15 23:21:11
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-18 15:39:29
+ * @LastEditTime: 2021-08-23 17:49:02
  */
 export default [
   {
@@ -14,10 +14,10 @@ export default [
     path: '/product',
     label: '产品维护',
     children: [{
-      path: '/category',
+      path: '/product/category',
       label: '品类管理',
     }, {
-      path: '/goods',
+      path: '/product/goods',
       label: '商品管理',
     }]
   },
@@ -34,10 +34,10 @@ export default [
     path: '/setting',
     label: '系统设置',
     children: [{
-      path: '/user',
+      path: '/setting/user',
       label: '用户设置'
     }, {
-      path: '/role',
+      path: '/setting/role',
       label: '角色设置'
     }]
   }

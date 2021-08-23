@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 18:20:09
+ * @LastEditTime: 2021-08-23 15:36:51
 -->
 <template>
   <el-container class="container">
@@ -19,6 +19,7 @@
       </el-aside>
       <el-main>
         <el-scrollbar class="page-scroll">
+          <Breadcrumb />
           <div class="view">
             <router-view />
           </div>
@@ -30,11 +31,13 @@
 <script>
 import Headers from '@/components/headers'
 import Sider from '@/components/sider'
+import Breadcrumb from '@/components/breadcrumb'
 export default {
   name: 'default',
   components: {
     Sider,
-    Headers
+    Headers,
+    Breadcrumb
   },
   data () {
     return {}

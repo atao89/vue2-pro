@@ -4,10 +4,10 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:07:07
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 18:18:37
+ * @LastEditTime: 2021-08-23 15:47:02
  */
 import Vue from 'vue'
-import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar } from 'element-ui'
+import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, } from 'element-ui'
 import '@/assets/stylues/element-variables.scss'
 
 Vue.component(Card.name, Card)
@@ -39,6 +39,8 @@ Vue.component(Radio.name, Radio)
 Vue.component(RadioGroup.name, RadioGroup)
 Vue.component(RadioButton.name, RadioButton)
 Vue.component(Scrollbar.name, Scrollbar)
+Vue.component(Breadcrumb.name, Breadcrumb)
+Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm;

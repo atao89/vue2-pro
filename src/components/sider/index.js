@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-16 19:13:37
+ * @LastEditTime: 2021-08-23 17:32:49
  */
 import { mapGetters } from 'vuex'
 import menuConfig from '@/config/DynamicRoutes'
@@ -21,7 +21,7 @@ export default {
     ...mapGetters(['getMenuCollapse', 'getMenuStyle', 'getCurrentMenuStyle'])
   },
   created () {
-    this.defaultActive = this.$route.path
+    this.defaultActive = this.$route.path;
   },
   methods: {
     handleOpen (key, keyPath) {
