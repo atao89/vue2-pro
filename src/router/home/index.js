@@ -4,11 +4,12 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:30:26
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-23 17:33:05
+ * @LastEditTime: 2021-08-24 23:34:14
  */
 export default [
   {
     path: '/',
+    name: 'Home',
     redirect: '/home',
   },
   {

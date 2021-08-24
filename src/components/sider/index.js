@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-23 17:32:49
+ * @LastEditTime: 2021-08-24 23:32:04
  */
 import { mapGetters } from 'vuex'
 import menuConfig from '@/config/DynamicRoutes'
@@ -20,9 +20,9 @@ export default {
   computed: {
     ...mapGetters(['getMenuCollapse', 'getMenuStyle', 'getCurrentMenuStyle'])
   },
-  created () {
-    this.defaultActive = this.$route.path;
-  },
+  // created () {
+  //   this.defaultActive = this.$route.path;
+  // },
   methods: {
     handleOpen (key, keyPath) {
       // console.log(key, keyPath)
@@ -66,7 +66,7 @@ export default {
           backgroundColor: this.getMenuStyle.backgroundColor
         }}>
         <el-menu
-          default-active={this.defaultActive}
+          default-active={this.$route.path}
           class={[
             'el-menu-vertical-demo',
             this.getCurrentMenuStyle === 'light' ? 'menu-light' : 'menu-dark'

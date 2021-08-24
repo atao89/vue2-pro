@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 18:16:12
+ * @LastEditTime: 2021-08-24 23:47:26
  */
 import { mapGetters } from 'vuex'
 // import menuConfig from '@/config/DynamicRoutes'
@@ -75,7 +75,7 @@ export default {
           <div>
             <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
-                下拉菜单
+                快捷操作
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item divided command={'news'}>消息中心</el-dropdown-item>

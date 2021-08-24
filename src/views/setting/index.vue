@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-20 09:56:59
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-23 17:44:44
+ * @LastEditTime: 2021-08-25 00:30:53
 -->
 <template>
   <div class="setting">
@@ -16,7 +16,3 @@ export default {
   name: "Setting",
 };
 </script>
-<style lang="scss" scoped>
-.setting {
-}
-</style>
