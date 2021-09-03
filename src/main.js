@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 18:08:03
+ * @LastEditTime: 2021-09-02 17:37:17
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -31,3 +31,17 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+// let app = new Vue({
+//   router,
+//   store,
+//   render: h => h(App)
+// })
+
+// window.mountApp = () => {
+//   app.$mount('#app')
+// }
+
+// if (window.STYLE_READY) {
+//   window.mountApp
+// }

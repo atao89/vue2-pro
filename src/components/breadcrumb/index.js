@@ -4,56 +4,34 @@
  * @Author: 周涛
  * @Date: 2021-08-23 15:33:47
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-24 23:45:52
+ * @LastEditTime: 2021-08-23 17:00:50
  */
 import './breadcrumb.scss'
-import menuConfig from '@/config/DynamicRoutes'
 export default {
     name: 'headers',
     data() {
-        return {
-            menuConfig,
-            levelList: null,
-        }
-    },
-    created() {
-        this.getBreadList();
+        return {}
     },
     watch: {
         $route() {
-            this.getBreadList();
+            this.getBreadcrumb();
         }
     },
+    created() {
+        this.getBreadcrumb();
+    },
     methods: {
-        getBreadList() {
-            let matched = this.$route.matched.filter(item => item.name); // $route.matched 将会是一个包含从上到下的所有对象 (副本)。
-            const first = matched[0];
-            if (first && first.name !== 'Home') {
-                matched = [{ path: '/home', meta: { title: '首页' } }].concat(matched);
-            }
-            this.levelList = matched;
+        getBreadcrumb() {
+            // console.log(this.$route)
+            // let matched = this.$route.matched.filter(item=>item.name);
         },
-        renderBreadcrumb(menus) {
-            // console.log('menus', menus)
-            if (menus && menus.length) {
-                return menus.map(menu => {
-                    if (menu.redirect && menu.redirect == 'home' || menu.path == '/home') {
-                        return (
-                            <el-breadcrumb-item to={{ path: '/home' }}>
-                                {menu.meta.title}
-                            </el-breadcrumb-item>
-                        )
-                    } else {
-                        return (
-                            <el-breadcrumb-item>
-                                {menu.meta.title}
-                            </el-breadcrumb-item>
-                        )
-                    }
-
-                })
-            }
-        },
+        // renderBreadcrumb(menus) {
+        //     return menus.map(menu => {
+        //         return (
+        //             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+        //         )
+        //     })
+        // },
     },
 
     render() {
@@ -64,7 +42,8 @@ export default {
                     backgroundColor: '#fff'
                 }}>
                 <el-breadcrumb separator-class="el-icon-arrow-right">
-                    {this.renderBreadcrumb(this.levelList)}
+                    <el-breadcrumb-item to={{ path: '/' }}>首页</el-breadcrumb-item>
+                    {/* {this.renderBreadcrumb()} */}
                 </el-breadcrumb>
             </div >
         )
