@@ -4,10 +4,10 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-02 18:11:19
+ * @LastEditTime: 2021-09-03 15:47:32
  */
 const path = require('path')
-const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
+const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin'); //生成骨架屏插件
 
 module.exports = {
   chainWebpack: config => {
