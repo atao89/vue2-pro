@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-02 17:37:17
+ * @LastEditTime: 2021-09-07 14:58:23
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -17,6 +17,8 @@ import DefaultLayout from './layout/default'
 import HomeLayout from './layout/home'
 import LoginLayout from './layout/login'
 import './assets/stylues/common.scss'
+import './directives'
+import './permission.js'
 
 Vue.component('default-layout', DefaultLayout)
 Vue.component('home-layout', HomeLayout)
