@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-03 15:47:32
+ * @LastEditTime: 2021-09-08 16:29:57
  */
 const path = require('path')
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin'); //生成骨架屏插件
@@ -48,7 +48,7 @@ module.exports = {
     // 开启 CSS source maps?
     sourceMap: false,
     // 启用 CSS modules for all css / pre-processor files.
-    modules: false
+    // modules: false // 此处会报警告，因此用下面一行代替
   },
   lintOnSave: false,
   devServer: {

@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-23 16:34:15
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-23 17:37:50
+ * @LastEditTime: 2021-09-08 19:34:26
  */
 export default [
     {
@@ -13,6 +13,8 @@ export default [
         component: () => import(/* webpackChunkName: "order" */ '@/views/order/index.vue'),
         meta: {
           title: '订单管理'
-        }
+        },
+        id: 5,
+        pId: 50
     }
 ]
