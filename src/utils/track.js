@@ -4,10 +4,10 @@
  * @Author: 周涛
  * @Date: 2021-09-07 14:37:04
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-07 14:53:37
+ * @LastEditTime: 2021-09-08 21:47:22
  */
 export const trackPage = (id, data = {}, query = {}) => {
-    console.log('id: ', id);
-    console.log('data: ', data);
-    console.log('query: ', query);
+    // console.log('id: ', id);
+    // console.log('data: ', data);
+    // console.log('query: ', query);
 }

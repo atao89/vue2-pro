@@ -52,6 +52,10 @@ html, body {
 .el-main {
   background-color: #f0f2f5;
   overflow-x: hidden;
+  padding: 10px;
+}
+.el-container.main {
+  margin-top: 3px;
 }
 .view {
   background: #fff;

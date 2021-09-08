@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 18:16:12
+ * @LastEditTime: 2021-09-09 00:48:24
  */
 import { mapGetters } from 'vuex'
 // import menuConfig from '@/config/DynamicRoutes'
@@ -57,6 +57,9 @@ export default {
         this.$router.push('/login');
         this.ls.clearAll();
       }).catch(() => {});
+    },
+    goHome(){
+      this.$router.push('/');
     }
   },
 
@@ -68,14 +71,14 @@ export default {
           backgroundColor: this.getMenuStyle.backgroundColor
         }}>
         <div class="logo">
-          <img src={logo} class="logo-img" />
+          <img src={logo} class="logo-img" onclick={this.goHome} />
         </div>
         <div class="header-info">
           <h3 class="system-name">{process.env.VUE_APP_SYSTEM_NAME}</h3>
           <div>
             <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
-                下拉菜单
+                快捷入口
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item divided command={'news'}>消息中心</el-dropdown-item>

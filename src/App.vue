@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-10 15:48:34
+ * @LastEditTime: 2021-09-08 22:14:31
 -->
 <template>
   <div id="app">
@@ -30,9 +30,9 @@ export default {
   },
   computed: {
     layout () {
-      if (this.$route.meta.layout) {
-        // console.log('this.$route', this.$route)
-      }
+      // if (this.$route.meta.layout) {
+      //   console.log('this.$route', this.$route)
+      // }
       return this.$route.meta.layout ? (this.$route.meta.layout) + '-layout' : 'default-layout'
     }
   },

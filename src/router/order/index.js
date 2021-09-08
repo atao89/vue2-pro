@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-23 16:34:15
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 19:34:26
+ * @LastEditTime: 2021-09-08 22:22:20
  */
 export default [
     {
@@ -15,6 +15,7 @@ export default [
           title: '订单管理'
         },
         id: 5,
-        pId: 50
+        pId: 50,
+        sort: 4,
     }
 ]

@@ -28,6 +28,10 @@ $logoH: 65px;
       background-color: #ef4951 !important;
       font-weight: bold;
     }
+    .el-menu-item {
+      height: 40px;
+      line-height: 40px;
+    }
   }
   .menu-light {
     .sider-logo {
@@ -45,5 +49,9 @@ $logoH: 65px;
   }
   .cc-svg-icon {
     margin-right: 10px;
+  }
+
+  .active-menu {
+    border-left: 3px solid #fff;
   }
 }
