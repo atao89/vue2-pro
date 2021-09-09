@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 19:39:53
+ * @LastEditTime: 2021-09-10 01:34:43
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -50,6 +50,11 @@ export function resetRouter() {
   router.matcher = newRouter.matcher // reset router
 }
 
+// 重复点击导航时，控制台出现报错
+const VueRouterPush = Router.prototype.push
+Router.prototype.push = function push (to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}
 
 // 对将要进入的路由进行权判断
 router.beforeEach((to, from, next) => {

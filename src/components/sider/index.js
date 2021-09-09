@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 16:33:46
+ * @LastEditTime: 2021-09-10 01:09:08
  */
 import { mapGetters } from 'vuex'
 import './sider.scss'
@@ -56,7 +56,7 @@ export default {
             return (
               <el-menu-item index={menu.path} class={this.$route.path === menu.path ? 'active-menu' : ''}>
                 {icon}
-                <span slot="title">{menu.meta.title}</span>
+                <span>{menu.meta.title}</span>
               </el-menu-item>
             )
           }

@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 18:36:31
+ * @LastEditTime: 2021-09-09 22:48:30
  */
 export default [
   {
@@ -16,7 +16,8 @@ export default [
       layout: 'login',
       title: '登录-vue2-pro'
     },
-    id: 3,
-    pId: 30
+    // id: 3,
+    // pId: 30
+    icon: 'avatar'
   }
 ]

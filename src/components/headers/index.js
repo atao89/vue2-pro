@@ -4,8 +4,9 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 00:48:24
+ * @LastEditTime: 2021-09-10 01:01:02
  */
+import store, { types } from '../../store'
 import { mapGetters } from 'vuex'
 // import menuConfig from '@/config/DynamicRoutes'
 import logo from "@/assets/images/logo.png";
@@ -56,26 +57,33 @@ export default {
       }).then(() => {
         this.$router.push('/login');
         this.ls.clearAll();
-      }).catch(() => {});
+      }).catch(() => { });
     },
-    goHome(){
+    goHome() {
       this.$router.push('/');
-    }
+    },
+    openOrCloseMenu() {
+      store.dispatch(types.MENU_COLLAPSE, !store.state[types.MENU_COLLAPSE])
+    },
   },
 
   render() {
+    const icon =<svg-icon icon-class={'menu-fold'} class-name={'menu-fold'} onclick={this.openOrCloseMenu} />
     return (
       <div
         class="headers"
         style={{
           backgroundColor: this.getMenuStyle.backgroundColor
         }}>
-        <div class="logo">
+        <div class="logo" style={{ 'width': this.getMenuCollapse ? '64px' : '200px' }}>
           <img src={logo} class="logo-img" onclick={this.goHome} />
         </div>
         <div class="header-info">
-          <h3 class="system-name">{process.env.VUE_APP_SYSTEM_NAME}</h3>
-          <div>
+          <div class="header-info-left">
+            {icon}
+            <h3 class="system-name">{process.env.VUE_APP_SYSTEM_NAME}</h3>
+          </div>
+          <div class="header-info-right">
             <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
                 快捷入口

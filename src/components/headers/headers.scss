@@ -1,4 +1,5 @@
 .headers {
+    height: 100%;
     display: flex;
     .logo {
         width:200px;
@@ -14,22 +15,34 @@
         justify-content: space-between;
         color: #fff;
         padding: 0 $height20;
-        .system-name {
-            font-size: $fontsize-system-name;
-            font-weight: bold;
-            font-family: "楷体","楷体_GB2312";
+        .header-info-left {
+            display: flex;
+            align-items: center;
+            .svg-icon.menu-fold {
+                width: 22px;
+                height: 22px;
+                margin-right: 30px;
+                cursor: pointer;
+            }
+            .system-name {
+                font-size: $fontsize-system-name;
+                font-weight: bold;
+                font-family: "楷体","楷体_GB2312";
+            }
         }
-        .dropdown {
-            height: 32px;
-            color: #fff;
-        }
-        .el-icon-user {
-            font-size: $fontsize-icon-user;
-            margin: 0 5px 0 20px;
-        }
-        .loginout {
-            cursor: pointer;
-            margin-left: 5px;
+        .header-info-right {
+            .dropdown {
+                height: 32px;
+                color: #fff;
+            }
+            .el-icon-user {
+                font-size: $fontsize-icon-user;
+                margin: 0 5px 0 20px;
+            }
+            .loginout {
+                cursor: pointer;
+                margin-left: 5px;
+            }
         }
     }
 }

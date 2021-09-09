@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 22:57:20
+ * @LastEditTime: 2021-09-09 22:50:09
  */
 export default [
   {
@@ -14,8 +14,9 @@ export default [
     meta: {
       title: '系统设置'
     },
-    id: 7,
-    pId: 70,
+    // id: 7,
+    // pId: 70,
+    icon: 'mac',
     sort: 6,
     children: [{
       path: '/setting/user',
@@ -24,8 +25,8 @@ export default [
       meta: {
         title: '用户设置'
       },
-      id: 701,
-      pId: 7
+      // id: 701,
+      // pId: 7
     }, {
       path: '/setting/role',
       name: 'Role',
@@ -33,8 +34,8 @@ export default [
       meta: {
         title: '角色设置'
       },
-      id: 702,
-      pId: 7
+      // id: 702,
+      // pId: 7
     }]
   }
 ]
