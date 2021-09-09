@@ -15,55 +15,32 @@ html, body {
 
 .container {
   height: 100%;
-  // display: flex;
-  // flex-direction: column;
 }
 .el-header {
-  background-color: #fff;
   padding: 0 !important;
-  // color: #333;
-  // text-align: center;
-  // height: 60px;
-  line-height: 60px;
+  line-height: $height60;
 }
 .el-aside {
   background: #d8222a;
 }
+.el-main {
+  overflow: hidden;
+}
 .main {
-  // flex: 1;
   overflow-x: hidden;
 }
-// .el-aside {
-//   background-color: #d8222a;
-//   overflow-x: hidden;
-// }
-// .content-header {
-//   height: 40px !important;
-//   line-height: 40px !important;
-//   background: #f0f2f5;
-//   padding-left: 20px;
-//   padding-right: 36px;
-//   .breadcrumb {
-//     background: #fff;
-//     border-bottom-left-radius: 5px;
-//     border-bottom-right-radius: 5px;
-//   }
-// }
+// .el-aside {}
 .el-main {
   background-color: #f0f2f5;
   overflow-x: hidden;
-  padding: 10px;
-}
-.el-container.main {
-  margin-top: 3px;
+  padding: $height10;
 }
 .view {
   background: #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: $height10;
+  padding-bottom: $height30;
 }
-
-// 为了把头部和下面区分开
-// .el-container.main {
-//   border-top: 10px solid #c51313;
-// }
+.home-view {
+  padding-bottom: $height10;
+}

@@ -4,21 +4,23 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-07 14:58:23
+ * @LastEditTime: 2021-09-09 15:50:05
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './components'
+import './assets/icons'
 import './lib/element-ui'
 import ls from './utils/storage'
-import DefaultLayout from './layout/default'
-import HomeLayout from './layout/home'
-import LoginLayout from './layout/login'
 import './assets/stylues/common.scss'
 import './directives'
 import './permission.js'
+
+import DefaultLayout from './layout/default'
+import HomeLayout from './layout/home'
+import LoginLayout from './layout/login'
 
 Vue.component('default-layout', DefaultLayout)
 Vue.component('home-layout', HomeLayout)

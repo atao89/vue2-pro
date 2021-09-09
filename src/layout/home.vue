@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 21:49:26
+ * @LastEditTime: 2021-09-09 13:49:39
 -->
 <template>
   <el-container class="container">
@@ -18,23 +18,28 @@
         </el-scrollbar>
       </el-aside>
       <el-main>
-        <div class="view">
+        <el-scrollbar class="page-scroll">
+          <div class="view home-view">
+            <router-view />
+          </div>
+        </el-scrollbar>
+        <!-- <div class="view">
           <router-view />
-        </div>
+        </div> -->
       </el-main>
     </el-container>
   </el-container>
 </template>
 <script>
-import Headers from '@/components/headers'
-import Sider from '@/components/sider'
+import Headers from "@/components/headers";
+import Sider from "@/components/sider";
 export default {
-  name: 'home',
+  name: "home",
   components: {
     Sider,
-    Headers
-  }
-}
+    Headers,
+  },
+};
 </script>
 <style lang="scss">
 </style>

@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 23:28:04
+ * @LastEditTime: 2021-09-09 11:27:55
 -->
 <template>
   <el-container class="container">
@@ -18,8 +18,8 @@
         </el-scrollbar>
       </el-aside>
       <el-main>
+        <Breadcrumb />
         <el-scrollbar class="page-scroll">
-          <Breadcrumb />
           <div class="view">
             <router-view />
           </div>

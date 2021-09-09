@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 00:22:48
+ * @LastEditTime: 2021-09-09 16:33:46
  */
 import { mapGetters } from 'vuex'
 import './sider.scss'
@@ -41,17 +41,21 @@ export default {
       return menus.map(menu => {
         if (!menu.hidden && menu.path != '/') {
           if (menu.children) {
+            const icon = menu.icon ? <svg-icon icon-class={menu.icon} /> : ''
             return (
               <el-submenu index={menu.path}>
                 <template slot="title">
+                  {icon}
                   <span>{menu.meta.title}</span>
                 </template>
                 {this.renderMenu(menu.children)}
               </el-submenu>
             )
           } else {
+            const icon = menu.icon ? <svg-icon icon-class={menu.icon} /> : ''
             return (
-              <el-menu-item index={menu.path} class={this.$route.path === menu.path ?  'active-menu' : ''}>
+              <el-menu-item index={menu.path} class={this.$route.path === menu.path ? 'active-menu' : ''}>
+                {icon}
                 <span slot="title">{menu.meta.title}</span>
               </el-menu-item>
             )
