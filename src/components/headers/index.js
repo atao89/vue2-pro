@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 01:01:02
+ * @LastEditTime: 2021-09-10 10:31:11
  */
 import store, { types } from '../../store'
 import { mapGetters } from 'vuex'
@@ -16,7 +16,8 @@ export default {
   data() {
     return {
       //   menuConfig,
-      //   defaultActive: ''
+      //   defaultActive: '',
+      avatarUrl: 'https://img0.baidu.com/it/u=1900407639,2242425156&fm=26&fmt=auto&gp=0.jpg'
     }
   },
   computed: {
@@ -68,7 +69,8 @@ export default {
   },
 
   render() {
-    const icon =<svg-icon icon-class={'menu-fold'} class-name={'menu-fold'} onclick={this.openOrCloseMenu} />
+    const icon = <svg-icon icon-class={'menu-fold'} class-name={'menu-fold'} onclick={this.openOrCloseMenu} />
+    const avatar = <el-avatar size={'small'} src={this.avatarUrl}></el-avatar>
     return (
       <div
         class="headers"
@@ -86,14 +88,14 @@ export default {
           <div class="header-info-right">
             <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
-                快捷入口
+                快捷入口<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item divided command={'news'}>消息中心</el-dropdown-item>
                 <el-dropdown-item divided command={'setting'}>系统设置</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-            <i class="el-icon-user"></i>
+            {avatar}
             <span>{this.ls.getStore('USER_INFO') ? '欢迎您, ' + this.ls.getStore('USER_INFO') : ''}</span>
             <span class="loginout" onclick={this.loginout}>{this.ls.getStore('USER_INFO') ? ' 退出' : ''}</span>
           </div>

@@ -4,10 +4,10 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:07:07
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-23 15:47:02
+ * @LastEditTime: 2021-09-10 15:57:50
  */
 import Vue from 'vue'
-import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, } from 'element-ui'
+import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, Avatar, Table, TableColumn } from 'element-ui'
 import '@/assets/stylues/element-variables.scss'
 
 Vue.component(Card.name, Card)
@@ -30,7 +30,6 @@ Vue.component(Container.name, Container)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Aside.name, Aside)
-
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
 Vue.component(MenuItem.name, MenuItem)
@@ -41,6 +40,9 @@ Vue.component(RadioButton.name, RadioButton)
 Vue.component(Scrollbar.name, Scrollbar)
 Vue.component(Breadcrumb.name, Breadcrumb)
 Vue.component(BreadcrumbItem.name, BreadcrumbItem)
+Vue.component(Avatar.name, Avatar)
+Vue.component(Table.name, Table)
+Vue.component(TableColumn.name, TableColumn)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm;

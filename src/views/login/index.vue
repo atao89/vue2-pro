@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-08-19 17:23:14
+ * @LastEditTime: 2021-09-10 09:44:56
 -->
 <template>
   <div class="login">
@@ -15,7 +15,7 @@
           <el-input type="text" v-model="ruleForm.account" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+          <el-input type="password" show-password v-model="ruleForm.password" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
@@ -44,8 +44,8 @@ export default {
     };
     return {
       ruleForm: {
-        account: "",
-        password: "",
+        account: "atao",
+        password: "super666",
       },
       rules: {
         account: [

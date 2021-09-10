@@ -1,9 +1,13 @@
 .el-menu--vertical .el-menu .el-menu-item,
 .el-menu--vertical .el-menu .el-submenu,
-.el-menu--vertical .el-menu .el-submenu__title {
+.el-menu--vertical .el-menu .el-submenu .el-submenu__title {
   height: $height-menu;
   line-height: $height-menu;
 }
+.el-menu--vertical .el-menu .el-submenu .el-submenu__title .el-submenu__icon-arrow {
+  color:#fff;
+}
+
 // $logoH: 65px;
 .sider {
   // min-height: 100vh;

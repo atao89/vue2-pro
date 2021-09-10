@@ -4,14 +4,14 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:30:26
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 22:48:09
+ * @LastEditTime: 2021-09-10 10:34:59
  */
 export default [
   {
     path: '/',
     redirect: '/home',
     // name: 'Home',
-    // component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+    // component: () => import(/* webpackChunkName: "home" */ '@/views/home/index.vue'),
     // meta: {
     //   layout: 'home',
     //   title: '首页'
@@ -21,7 +21,7 @@ export default [
   {
     path: '/home',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '@/views/home/index.vue'),
     meta: {
       layout: 'home',
       title: '首页'
