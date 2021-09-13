@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 15:50:05
+ * @LastEditTime: 2021-09-13 10:18:21
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -18,6 +18,9 @@ import './assets/stylues/common.scss'
 import './directives'
 import './permission.js'
 
+import moment from "moment";
+moment.locale("zh-cn");
+
 import DefaultLayout from './layout/default'
 import HomeLayout from './layout/home'
 import LoginLayout from './layout/login'
@@ -27,6 +30,7 @@ Vue.component('home-layout', HomeLayout)
 Vue.component('login-layout', LoginLayout)
 
 Vue.prototype.ls = ls;
+Vue.prototype.$moment = moment;
 
 Vue.config.productionTip = false
 

@@ -4,15 +4,15 @@
  * @Author: 周涛
  * @Date: 2021-09-10 17:48:29
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 17:53:51
+ * @LastEditTime: 2021-09-13 16:51:59
 -->
 <template>
-  <div>
+  <div class="table-pane">
     <div v-if="dataSource.tool" class="tool">
+      <!-- v-permission="item.permission" -->
       <el-button
         v-for="item in dataSource.tool"
         :key="item.key"
-        v-permission="item.permission"
         class="filter-item"
         :style="{ background: item.bgColor, borderColor: item.bgColor }"
         :type="item.type || 'primary'"
@@ -22,9 +22,10 @@
       </el-button>
     </div>
     <el-table
-      ref="table"
       v-loading="dataSource.loading"
+      ref="table"
       :border="dataSource.border ? true : false"
+      :size="dataSource.size ? dataSource.size : 'small '"
       style="width: 100%"
       :class="{ 'no-data': !dataSource.data || !dataSource.data.length }"
       :data="dataSource.data"
@@ -162,8 +163,8 @@
             <div class="btn">
               <div v-for="item in dataSource.operation.data" :key="item.label">
                 <template v-if="item.type !== 'icon'">
+                  <!-- v-permission="item.permission" -->
                   <el-button
-                    v-permission="item.permission"
                     v-bind="item"
                     :type="item.type ? item.type : ''"
                     size="mini"
@@ -175,8 +176,16 @@
                   </el-button>
                 </template>
                 <template v-else>
-                  <i
+                  <!-- 使用iconfont图标 -->
+                  <!-- <i
                     :class="[icon, item.icon]"
+                    v-bind="item"
+                    @click="item.handleRow(scope.$index, scope.row, item.label)"
+                  /> -->
+                  <!-- 使用svg图标 -->
+                  <svg-icon
+                    :icon-class="item.icon"
+                    className="recommend"
                     v-bind="item"
                     @click="item.handleRow(scope.$index, scope.row, item.label)"
                   />
@@ -194,7 +203,7 @@
         :page-sizes="
           dataSource.pageData.pageSizes
             ? dataSource.pageData.pageSizes
-            : [5, 10, 15, 20]
+            : [10, 20, 50, 100, 200, 500, 1000]
         "
         :page-size="dataSource.pageData.pageSize"
         layout="total, sizes, prev, pager, next, jumper"
@@ -280,11 +289,11 @@ export default {
     },
     handleSizeChange(val) {
       this.$emit("changeSize", val);
-      console.log(`每页 ${val} 条`);
+      // console.log(`每页 ${val} 条`);
     },
     handleCurrentChange(val) {
       this.$emit("changeNum", val);
-      console.log(`当前页: ${val}`);
+      // console.log(`当前页: ${val}`);
     },
     // 点击行即可选中
     getRowData(row) {
@@ -294,6 +303,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.table-pane {
+  padding-left: 5px; /*为了和上面搜索面板对齐*/
+}
 .page {
   margin-top: 20px;
 }
@@ -305,8 +317,8 @@ export default {
   margin-left: 5px;
 }
 .reference-img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-size: 100% 100%;
   border-radius: 4px;
 }
@@ -319,5 +331,10 @@ export default {
   width: 25px;
   font-size: 20px;
   font-weight: bold;
+}
+.svg-icon.recommend {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 </style>

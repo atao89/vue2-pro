@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-09-10 17:46:33
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 17:53:37
+ * @LastEditTime: 2021-09-13 15:15:33
 -->
 <template>
   <div>
@@ -12,7 +12,11 @@
       <el-date-picker
         v-if="filterData.timeSelect"
         v-model="dateRange"
-        style="width: 300px"
+        :style="{
+          width: filterData.timeSelect.width
+            ? filterData.timeSelect.width + 'px'
+            : defaultWidth,
+        }"
         type="daterange"
         start-placeholder="开始日期"
         end-placeholder="结束日期"
@@ -23,10 +27,10 @@
       <template v-if="filterData.elinput">
         <el-input
           v-for="(item, index) in filterData.elinput"
-          :key="index"
+          :key="item.key"
           v-model="listQuery[item.key]"
           :placeholder="item.name"
-          :style="{ width: item.width ? item.width + 'px' : '200px' }"
+          :style="{ width: item.width ? item.width + 'px' : defaultWidth }"
           class="filter-item"
         />
       </template>
@@ -37,7 +41,7 @@
           v-model="listQuery[item.key]"
           :placeholder="item.name"
           clearable
-          :style="{ width: item.width ? item.width + 'px' : '90px' }"
+          :style="{ width: item.width ? item.width + 'px' : defaultWidth }"
           class="filter-item"
         >
           <el-option
@@ -48,14 +52,38 @@
           />
         </el-select>
       </template>
-      <div class="btn">
-        <el-button class="filter-item" type="primary" @click="handleSearch">
-          搜索
-        </el-button>
-        <el-button class="filter-item" type="warning" @click="handleRest">
-          重置
-        </el-button>
+      <div
+        class="btn filter-item"
+        :style="{
+          width: filterData.timeSelect.width
+            ? filterData.timeSelect.width + 'px'
+            : defaultWidth,
+        }"
+      >
+        <!-- class="filter-item" -->
+        <el-button type="primary" @click="handleSearch"> 搜索 </el-button>
+        <!-- class="filter-item" -->
+        <el-button type="warning" @click="handleRest"> 重置 </el-button>
       </div>
+      <!-- 下面是多添加几个空白的 -->
+      <div
+        class="filter-item-empty"
+        :style="{
+          width: filterData.timeSelect.width
+            ? filterData.timeSelect.width + 'px'
+            : defaultWidth,
+          visibility: 'hidden',
+        }"
+      ></div>
+      <div
+        class="filter-item-empty"
+        :style="{
+          width: filterData.timeSelect.width
+            ? filterData.timeSelect.width + 'px'
+            : defaultWidth,
+          visibility: 'hidden',
+        }"
+      ></div>
     </div>
   </div>
 </template>
@@ -81,8 +109,9 @@
 //     }
 //   ]
 // }
+import { cloneDeep } from "lodash";
 export default {
-  name: 'filter-pane',
+  name: "filter-pane",
   props: {
     // eslint-disable-next-line vue/require-default-prop
     filterData: {
@@ -91,6 +120,7 @@ export default {
   },
   data() {
     return {
+      defaultWidth: "200px",
       pickerOptions: {
         disabledDate(time) {
           return time.getTime() > Date.now();
@@ -125,8 +155,8 @@ export default {
   },
   methods: {
     handleSearch() {
-      console.log("搜索成功", this.listQuery);
-      const data = this.$global.deepClone(this.listQuery);
+      // console.log("搜索成功", this.listQuery);
+      const data = cloneDeep(this.listQuery);
       if (this.dateRange && this.dateRange[0] !== "") {
         const startTime =
           this.$moment(this.dateRange[0]).format("YYYY-MM-DD") + " 00:00:00";
@@ -143,7 +173,7 @@ export default {
       this.$emit("filterMsg", data);
     },
     handleRest() {
-      const data = this.$global.deepClone(this.listQuery);
+      const data = cloneDeep(this.listQuery);
       Object.keys(data).forEach(function (key) {
         data[key] = "";
       });
@@ -156,15 +186,33 @@ export default {
 </script>
 
 <style  scoped lang='scss'>
+.filter-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .filter-item {
-  margin-left: 10px;
-  display: inline-block;
+  margin: 5px;
+  // width: 20%;
+  // height: 30px;
 }
-.filter-container .filter-item:nth-of-type(1) {
-  margin-left: 0px;
+.filter-item-empty {
+  margin: 5px;
+  height: 0px;
 }
-.btn {
-  display: inline-block;
-  margin-left: 10px;
-}
+// .filter-item {
+//   margin-left: 10px;
+//   display: inline-block;
+// }
+// .filter-container .filter-item:nth-of-type(1) {
+//   margin-left: 0px;
+// }
+// .btn {
+//   display: inline-block;
+//   margin-left: 10px;
+// }
 </style>

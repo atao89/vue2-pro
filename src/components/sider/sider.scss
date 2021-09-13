@@ -21,6 +21,7 @@
   //   font-size: 18px;
   // }
   .el-menu {
+    background: transparent;
     border-right: 0 none;
     .el-menu-item,
     .el-submenu__title {
@@ -43,7 +44,8 @@
     //   color: #fff !important;
     // }
     .el-menu-item.is-active {
-      background-color: #ef4951 !important;
+      // background-color: #ef4951 !important;
+      background-color: transparent;
       font-weight: bold;
     }
   }
@@ -66,6 +68,7 @@
   // }
 
   .active-menu {
-    border-left: 3px solid #fff;
+    // border-left: 3px solid #fff;
+    border-bottom: 1px solid #fff;
   }
 }

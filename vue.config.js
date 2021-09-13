@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-09 18:38:36
+ * @LastEditTime: 2021-09-13 09:46:53
  */
 const path = require('path')
 // function resolve(dir) {
@@ -12,6 +12,7 @@ const path = require('path')
 // }
 
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin'); //生成骨架屏插件
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 
 module.exports = {
   // pages: {
@@ -55,6 +56,7 @@ module.exports = {
     //   args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
     //   return args
     // })
+    config.plugin("loadshReplace").use(new LodashModuleReplacementPlugin());
 
     // 1.这种方式可以
     // #region svg-config

@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 18:53:16
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 00:33:32
+ * @LastEditTime: 2021-09-13 14:49:55
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -23,7 +23,8 @@ export default new Vuex.Store({
     [types.BREADCRUMB_ITEMS]: [],
     [types.MENU_STYLE]: {
       custom: {
-        backgroundColor: '#d8222a',
+        // backgroundColor: '#d8222a',
+        backgroundColor: 'transparent',
         textColor: 'rgba(255, 255, 255, .85)',
         // activeTextColor: 'rgba(255, 255, 255, .85)',
         activeTextColor: '#fff',
