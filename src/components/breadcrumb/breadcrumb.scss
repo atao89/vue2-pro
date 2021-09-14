@@ -1,7 +1,14 @@
 .breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: $height10;
+    padding-right: $height10;
     margin-bottom: $height10;
     .el-breadcrumb {
         line-height: $height30;
+    }
+    #cnzz_box {
+        font-size: 14px;
     }
 }

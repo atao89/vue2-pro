@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-23 15:33:47
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-08 23:26:47
+ * @LastEditTime: 2021-09-14 17:22:44
  */
 import './breadcrumb.scss'
 export default {
@@ -37,6 +37,7 @@ export default {
                     <el-breadcrumb-item to={{ path: '/' }}>首页</el-breadcrumb-item>
                     {this.renderBreadcrumb(this.matched)}
                 </el-breadcrumb>
+                <div id="cnzz_box"></div>
             </div >
         )
     }
