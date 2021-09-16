@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-13 10:18:21
+ * @LastEditTime: 2021-09-16 16:19:19
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -31,6 +31,9 @@ Vue.component('login-layout', LoginLayout)
 
 Vue.prototype.ls = ls;
 Vue.prototype.$moment = moment;
+
+// 打包生产环境不需要Mock
+if (process.env.NODE_ENV !== 'production') import('./mock')
 
 Vue.config.productionTip = false
 

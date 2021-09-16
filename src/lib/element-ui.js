@@ -4,10 +4,11 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:07:07
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-13 16:55:22
+ * @LastEditTime: 2021-09-16 15:34:06
  */
 import Vue from 'vue'
-import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, Avatar, Table, TableColumn, DatePicker, Select, Option, Pagination, Loading } from 'element-ui'
+import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, Avatar, Table, TableColumn, DatePicker, Select, Option, Pagination, Progress, Loading } from 'element-ui'
+import { CollapseTransition } from "element-ui/lib";
 import '@/assets/stylues/element-variables.scss'
 
 Vue.component(Card.name, Card)
@@ -47,7 +48,10 @@ Vue.component(DatePicker.name, DatePicker)
 Vue.component(Select.name, Select)
 Vue.component(Option.name, Option)
 Vue.component(Pagination.name, Pagination)
-Vue.use(Loading.directive);
+Vue.component(Progress.name, Progress)
+Vue.use(Loading.directive)
+
+Vue.component(CollapseTransition.name, CollapseTransition)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm;

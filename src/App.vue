@@ -4,11 +4,11 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-14 17:52:43
+ * @LastEditTime: 2021-09-16 16:36:30
 -->
 <template>
   <div id="app">
-    <div id="aaa"></div>
+    <!-- <div id="aaa"></div> -->
     <Snowf
       :amount="50"
       :size="5"
@@ -49,26 +49,26 @@ export default {
       id: "cnzz_stat_icon_1280321259",
     };
   },
-  watch: {
-    $route: {
-      handler(to, from) {
-        // console.log("to - - -  ", to);
-        // console.log("from - - -  ", from);
-        setTimeout(() => {
-          if (window._czc) {
-            const location = window.location;
-            const contentUrl = location.pathname + location.hash;
-            const refererUrl = "/";
-            // console.log("location - - -    ", location);
-            // console.log("contentUrl - - -    ", contentUrl);
-            window._czc.push(["_setAutoPageview", false]);
-            window._czc.push(["_trackPageview", contentUrl, refererUrl]);
-          }
-        }, 300);
-      },
-      immediate: true,
-    },
-  },
+  // watch: {
+  //   $route: {
+  //     handler(to, from) {
+  //       // console.log("to - - -  ", to);
+  //       // console.log("from - - -  ", from);
+  //       setTimeout(() => {
+  //         if (window._czc) {
+  //           const location = window.location;
+  //           const contentUrl = location.pathname + location.hash;
+  //           const refererUrl = "/";
+  //           // console.log("location - - -    ", location);
+  //           // console.log("contentUrl - - -    ", contentUrl);
+  //           window._czc.push(["_setAutoPageview", false]);
+  //           window._czc.push(["_trackPageview", contentUrl, refererUrl]);
+  //         }
+  //       }, 300);
+  //     },
+  //     immediate: true,
+  //   },
+  // },
   computed: {
     layout() {
       // if (this.$route.meta.layout) {
@@ -101,21 +101,21 @@ export default {
       document.getElementById("cnzz_box").appendChild(span);
       document.body.appendChild(script);
     },
+    // // 这种方式控制台会有警告
+    // initCNZZ() {
+    //   document.write(
+    //     unescape(
+    //       "%3Cspan id='cnzz_stat_icon_1280321259'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280321259%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"
+    //     )
+    //   );
+    //   document
+    //     .getElementById("cnzz_stat_icon_1280321259")
+    //     .classList.add("cnzz_atao89");
+    //   console.log(unescape("%3Cspan id='cnzz_stat_icon_1280321259'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280321259%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))
+    // },
   },
   mounted() {
-    this.initCNZZ();
-
-    // 现这种方式控制台会有警告
-    // document.write(
-    //   unescape(
-    //     "%3Cspan id='cnzz_stat_icon_1280321259'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280321259%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"
-    //   )
-    // );
-    // document
-    //   .getElementById("cnzz_stat_icon_1280321259")
-    //   .classList.add("cnzz_atao89");
-
-    // console.log(unescape("%3Cspan id='cnzz_stat_icon_1280321259'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280321259%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"))
+    // this.initCNZZ();
   },
 };
 </script>
@@ -131,6 +131,9 @@ body {
 #app {
   height: 100%;
   overflow: hidden;
+}
+.snowf-canvas {
+  z-index: -1 !important;
 }
 // .cnzz_atao89 {
 //   position: absolute;
