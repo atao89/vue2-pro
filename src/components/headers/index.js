@@ -4,20 +4,26 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 10:31:11
+ * @LastEditTime: 2021-09-17 16:04:24
  */
-import store, { types } from '../../store'
+import store, { types } from '@/store'
 import { mapGetters } from 'vuex'
+import Language from './Language.vue'
+import Avatar from './Avatar.vue'
 // import menuConfig from '@/config/DynamicRoutes'
 import logo from "@/assets/images/logo.png";
 import './headers.scss'
 export default {
   name: 'headers',
+  component: {
+    Language,
+    Avatar
+  },
   data() {
     return {
       //   menuConfig,
       //   defaultActive: '',
-      avatarUrl: 'https://img0.baidu.com/it/u=1900407639,2242425156&fm=26&fmt=auto&gp=0.jpg'
+      // avatarUrl: 'https://img0.baidu.com/it/u=1900407639,2242425156&fm=26&fmt=auto&gp=0.jpg'
     }
   },
   computed: {
@@ -70,7 +76,7 @@ export default {
 
   render() {
     const icon = <svg-icon icon-class={'menu-fold'} class-name={'menu-fold'} onclick={this.openOrCloseMenu} />
-    const avatar = <el-avatar size={'small'} src={this.avatarUrl}></el-avatar>
+    // const avatar = <el-avatar size={'small'} src={this.avatarUrl}></el-avatar>
     return (
       <div
         class="headers"
@@ -83,21 +89,26 @@ export default {
         <div class="header-info">
           <div class="header-info-left">
             {icon}
-            <h3 class="system-name">{process.env.VUE_APP_SYSTEM_NAME}</h3>
+            {/* <h3 class="system-name">{process.env.VUE_APP_SYSTEM_NAME}</h3> */}
+            <h3 class="system-name">{this.$t('title')}</h3>
           </div>
           <div class="header-info-right">
+            <Language />
+
             <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
-                快捷入口<i class="el-icon-arrow-down el-icon--right"></i>
+                {this.$t('entry')}
+                <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item divided command={'news'}>消息中心</el-dropdown-item>
                 <el-dropdown-item divided command={'setting'}>系统设置</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-            {avatar}
-            <span>{this.ls.getStore('USER_INFO') ? '欢迎您, ' + this.ls.getStore('USER_INFO') : ''}</span>
-            <span class="loginout" onclick={this.loginout}>{this.ls.getStore('USER_INFO') ? ' 退出' : ''}</span>
+            {/* {avatar} */}
+            <Avatar />
+            <span>{this.ls.getStore('USER_INFO') ? this.$t('welcome') + '，' + this.ls.getStore('USER_INFO') + ' ' : ''}</span>
+            <span class="loginout" onclick={this.loginout}>{this.ls.getStore('USER_INFO') ? ' ' + this.$t('loginout') : ''}</span>
           </div>
         </div>
       </div >

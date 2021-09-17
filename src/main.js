@@ -4,16 +4,17 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-16 16:19:19
+ * @LastEditTime: 2021-09-17 14:49:11
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import i18n from './i18n'
 import './components'
 import './assets/icons'
 import './lib/element-ui'
-import ls from './utils/storage'
+import { ls, ss } from './utils/storage'
 import './assets/stylues/common.scss'
 import './directives'
 import './permission.js'
@@ -30,6 +31,7 @@ Vue.component('home-layout', HomeLayout)
 Vue.component('login-layout', LoginLayout)
 
 Vue.prototype.ls = ls;
+Vue.prototype.ss = ss;
 Vue.prototype.$moment = moment;
 
 // 打包生产环境不需要Mock
@@ -40,6 +42,7 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
 

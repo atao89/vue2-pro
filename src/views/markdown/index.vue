@@ -4,16 +4,11 @@
  * @Author: 周涛
  * @Date: 2021-09-16 17:00:50
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-16 18:01:10
+ * @LastEditTime: 2021-09-17 13:41:29
 -->
 <template>
   <div class="markdown">
-    <!-- <el-card> -->
-    <markdown-editor
-      style="max-height: 600px"
-      v-model="markdown"
-    ></markdown-editor>
-    <!-- </el-card> -->
+    <markdown-editor v-model="markdown"></markdown-editor>
   </div>
 </template>
 
@@ -31,6 +26,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
