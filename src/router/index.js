@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-10 01:34:43
+ * @LastEditTime: 2021-09-22 16:05:50
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -26,7 +26,7 @@ routerContext.keys().forEach(route => {
   routes = [...routes, ...(routerModule.default || routerModule)]
 })
 // console.log('+++++++++routes', routes)
-
+routes.push({ path: '*', redirect: '/404', hidden: true })
 
 // const router = new Router({
 //   mode: 'history',
@@ -52,7 +52,7 @@ export function resetRouter() {
 
 // 重复点击导航时，控制台出现报错
 const VueRouterPush = Router.prototype.push
-Router.prototype.push = function push (to) {
+Router.prototype.push = function push(to) {
   return VueRouterPush.call(this, to).catch(err => err)
 }
 

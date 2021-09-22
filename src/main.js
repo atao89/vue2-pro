@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-17 14:49:11
+ * @LastEditTime: 2021-09-22 15:43:34
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -24,11 +24,11 @@ moment.locale("zh-cn");
 
 import DefaultLayout from './layout/default'
 import HomeLayout from './layout/home'
-import LoginLayout from './layout/login'
+import BasicLayout from './layout/basic'
 
 Vue.component('default-layout', DefaultLayout)
 Vue.component('home-layout', HomeLayout)
-Vue.component('login-layout', LoginLayout)
+Vue.component('basic-layout', BasicLayout)
 
 Vue.prototype.ls = ls;
 Vue.prototype.ss = ss;
