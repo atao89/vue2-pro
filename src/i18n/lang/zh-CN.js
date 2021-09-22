@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-09-17 14:36:05
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-17 16:09:55
+ * @LastEditTime: 2021-09-22 16:46:08
  */
 export default {
   title: 'xx网后台管理系统',
@@ -25,5 +25,6 @@ export default {
   role: '角色设置',
   test: '测试模块',
   markdown: 'Markdown编辑器',
-  i18n: 'i18n-多语言'
+  i18n: 'i18n-多语言',
+  drag: '拖拽列表',
 }

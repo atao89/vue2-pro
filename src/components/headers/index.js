@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-17 16:04:24
+ * @LastEditTime: 2021-09-22 16:27:54
  */
 import store, { types } from '@/store'
 import { mapGetters } from 'vuex'
@@ -95,7 +95,7 @@ export default {
           <div class="header-info-right">
             <Language />
 
-            <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
+            {/* <el-dropdown class="dropdown" oncommand={this.handleCommand} placement={'bottom-start'}>
               <span class="el-dropdown-link">
                 {this.$t('entry')}
                 <i class="el-icon-arrow-down el-icon--right"></i>
@@ -104,7 +104,7 @@ export default {
                 <el-dropdown-item divided command={'news'}>消息中心</el-dropdown-item>
                 <el-dropdown-item divided command={'setting'}>系统设置</el-dropdown-item>
               </el-dropdown-menu>
-            </el-dropdown>
+            </el-dropdown> */}
             {/* {avatar} */}
             <Avatar />
             <span>{this.ls.getStore('USER_INFO') ? this.$t('welcome') + '，' + this.ls.getStore('USER_INFO') + ' ' : ''}</span>

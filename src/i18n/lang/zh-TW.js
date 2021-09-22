@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-09-17 14:36:05
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-17 16:18:00
+ * @LastEditTime: 2021-09-22 16:46:16
  */
 export default {
   title: 'xx網後臺管理系統',
@@ -25,5 +25,6 @@ export default {
   role: '角色設定',
   test: '測試模塊',
   markdown: 'Markdown編輯器',
-  i18n: 'i18n-多語言'
+  i18n: 'i18n-多語言',
+  drag: '拖拽列表',
 }
