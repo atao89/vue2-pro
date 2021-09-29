@@ -27,7 +27,8 @@
     "vue-skeleton-webpack-plugin": "^1.2.2",
     "vue-snowf": "0.0.2",
     "vuedraggable": "^2.24.3",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "zt-vui": "0.0.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
