@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-22 16:05:50
+ * @LastEditTime: 2021-10-15 16:51:45
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -26,7 +26,7 @@ routerContext.keys().forEach(route => {
   routes = [...routes, ...(routerModule.default || routerModule)]
 })
 // console.log('+++++++++routes', routes)
-routes.push({ path: '*', redirect: '/404', hidden: true })
+// routes.push({ path: '*', redirect: '/404', hidden: true })
 
 // const router = new Router({
 //   mode: 'history',
