@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-15 14:26:22
+ * @LastEditTime: 2021-10-15 16:02:59
  */
 const path = require('path')
 // function resolve(dir) {
@@ -25,7 +25,7 @@ module.exports = {
   // eslint-loader 是否在保存的时候检查
   lintOnSave: false,
   // 基本路径
-  // baseUrl: './',//vue-cli3.3以下版本使用
+  // baseUrl: './', // vue-cli3.3以下版本使用
   publicPath: './', // vue-cli3.3+新版本使用
   // 输出文件目录
   // outputDir: 'dist/saas/',
