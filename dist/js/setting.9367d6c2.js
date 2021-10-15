@@ -1,2 +1,1 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["setting"],{7424:function(t,n,e){"use strict";e.r(n);var i=function(){var t=this,n=t.$createElement,e=t._self._c||n;return e("div",{staticClass:"setting"},[e("router-view")],1)},s=[],a={name:"Setting"},c=a,u=(e("f566"),e("cba8")),r=Object(u["a"])(c,i,s,!1,null,"07fdaa36",null);n["default"]=r.exports},8318:function(t,n,e){},f566:function(t,n,e){"use strict";e("8318")}}]);
-//# sourceMappingURL=setting.9367d6c2.js.map

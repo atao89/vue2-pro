@@ -1,2 +1,1 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["role"],{"80d6":function(e,l,n){"use strict";n.r(l);var t=function(){var e=this,l=e.$createElement,n=e._self._c||l;return n("div",{staticClass:"role"},[e._v("role")])},a=[],o={name:"Role"},r=o,s=n("cba8"),c=Object(s["a"])(r,t,a,!1,null,null,null);l["default"]=c.exports}}]);
-//# sourceMappingURL=role.24af6421.js.map
