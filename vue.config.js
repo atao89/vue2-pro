@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-13 09:46:53
+ * @LastEditTime: 2021-10-15 14:26:22
  */
 const path = require('path')
 // function resolve(dir) {
@@ -26,7 +26,7 @@ module.exports = {
   lintOnSave: false,
   // 基本路径
   // baseUrl: './',//vue-cli3.3以下版本使用
-  // publicPath: './', // vue-cli3.3+新版本使用
+  publicPath: './', // vue-cli3.3+新版本使用
   // 输出文件目录
   // outputDir: 'dist/saas/',
   // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
