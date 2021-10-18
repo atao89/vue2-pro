@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-15 16:51:45
+ * @LastEditTime: 2021-10-18 09:05:52
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -38,7 +38,7 @@ routerContext.keys().forEach(route => {
 const asyncRouter = [] // 动态路由
 
 const createRouter = () => new Router({
-  mode: 'history', // require service support
+  // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: [...routes, ...asyncRouter]
 })
