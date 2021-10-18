@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-18 10:09:50
+ * @LastEditTime: 2021-10-18 16:23:04
  */
 const path = require('path')
 // function resolve(dir) {
@@ -134,22 +134,38 @@ module.exports = {
           }
         ]
       }
-    })),
-    {
-      devServer: {
-        open: true,
-        // https: true,
-        proxy: {
-          '/user': {
-            target: 'https://devadminschool.icourt.cc',
-          },
-          '/live': {
-            target: 'https://devadminschool.icourt.cc',
-          },
-        }
+    }))
+  },
+
+
+  devServer: {
+    open: false, //是否自动弹出浏览器页面   
+    host: "localhost",
+    port: "8080",
+    https: false, //是否使用https协议
+    hotOnly: true, //是否开启热更新
+    proxy: {
+      '/user': {
+        target: 'https://devadminschool.icourt.cc',
+        ws: true, //如果要代理 websockets，配置这个参数
+        secure: false,  //如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          "^/user": "",
+        },
+      },
+      '/live': {
+        target: 'https://devadminschool.icourt.cc',
+        ws: true, //如果要代理 websockets，配置这个参数
+        secure: false,  //如果是https接口，需要配置这个参数
+        changeOrigin: true, //是否跨域
+        pathRewrite: {
+          "^/live": "",
+        },
       }
     }
   },
+
   /* 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度 */
   productionSourceMap: false,
   lintOnSave: false
