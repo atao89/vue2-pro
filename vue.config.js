@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-18 09:59:52
+ * @LastEditTime: 2021-10-18 10:09:50
  */
 const path = require('path')
 // function resolve(dir) {
@@ -150,7 +150,6 @@ module.exports = {
       }
     }
   },
-
   /* 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度 */
   productionSourceMap: false,
   lintOnSave: false
