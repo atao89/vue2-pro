@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-14 21:12:54
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-22 15:43:34
+ * @LastEditTime: 2021-10-19 09:46:15
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -18,6 +18,12 @@ import { ls, ss } from './utils/storage'
 import './assets/stylues/common.scss'
 import './directives'
 import './permission.js'
+
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad, {
+  error: require('@/assets/images/error.png'), //报错需要的图片
+  loading: require('@/assets/images/loading.png') // 替换需要的图片
+})
 
 import moment from "moment";
 moment.locale("zh-cn");

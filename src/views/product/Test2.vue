@@ -4,18 +4,21 @@
  * @Author: 周涛
  * @Date: 2021-09-09 00:11:58
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-18 17:27:28
+ * @LastEditTime: 2021-10-19 15:45:10
 -->
 <template>
-  <ul class="waterfall" id="waterfallBox">
-    <li class="item" v-for="item in imgList" :key="item.src">
-      <img :src="item.pic" srcset="" />
-      <p>{{ item.text }}</p>
-      <div class="mask">
-        <div>{{ item.hover }}</div>
-      </div>
-    </li>
-  </ul>
+  <div class="test2">
+    <ul class="waterfall" id="waterfallBox">
+      <li class="item" v-for="item in imgList" :key="item.pic">
+        <img v-lazy="item.pic" />
+        <p>{{ item.text }}</p>
+        <div class="mask">
+          <div>{{ item.hover }}</div>
+        </div>
+      </li>
+    </ul>
+    <!-- <div class="noMore">已经到底啦~</div> -->
+  </div>
 </template>
 
 <script>
@@ -30,62 +33,87 @@ export default {
       picIndex: 1,
     };
   },
+  created() {
+    this.initPic();
+    // this.onPageScroll();
+  },
   methods: {
     initPic() {
-      for (let index = 0; index < 10; index++) {
+      for (let index = 0; index < 84; index++) {
         this.addPic();
       }
     },
 
     addPic() {
-      const pic = {
+      const picData = {
         text: this.text,
         hover: this.hover,
         pic: require(`@/assets/images/waterfall/atao${this.picIndex}.png`),
       };
-      this.imgList.push(pic);
+      this.imgList.push(picData);
       this.picIndex++;
       if (this.picIndex > 86) {
         this.picIndex = 1;
       }
     },
 
-    canShow() {
-      /** 距离显示多少px开始加载图片 */
-      const distanece = 15;
-      const windowHeight = window.innerHeight;
-      const parentEl = document.getElementById("waterfallBox");
-      const lastChild = parentEl.lastElementChild;
-      const top = lastChild.getBoundingClientRect().top;
-      if (top - distanece < windowHeight) {
-        return true;
-      } else {
-        return false;
-      }
-    },
+    // canShow() {
+    //   /** 距离显示多少px开始加载图片 */
+    //   const distanece = 15;
+    //   const windowHeight = window.innerHeight;
+    //   const parentEl = document.getElementById("waterfallBox");
+    //   const lastChild = parentEl.lastElementChild;
+    //   const top = lastChild.getBoundingClientRect().top;
+    //   if (top - distanece < windowHeight) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // },
 
-    onPageScroll() {
-      console.log("flag", flag);
-      const flag = this.canShow();
-      console.log("flag", flag);
-      if (flag) {
-        this.addPic();
-      }
-    },
+    // onPageScroll() {console.log(11111111)
+    //   window.addEventListener("scroll", function () {
+    //     const flag = that.canShow();
+    //     if (flag) {
+    //       this.addPic();
+    //     }
+    //   });
+    // },
+
+    // lozyload() {
+    //   let imgList1 = [
+    //     ...document.querySelector(".waterfall").querySelectorAll("li img"),
+    //   ];
+    //   let num = imgList1.length;
+    //   let count = 0;
+
+    //   let newArr = [];
+    //   imgList1.forEach((item, index) => {
+    //     let Rect = item.getBoundingClientRect();
+    //     if (Rect.top < window.innerHeight) {
+    //       Rect.src = Rect.dataset.src;
+    //       newArr.push(index);
+    //       count++;
+    //       console.log("count: ", count, "num: ", num);
+    //       if (count === num) {
+    //         document.removeEventListener("srcoll", lozyload);
+    //       }
+    //     }
+    //   });
+    //   // 删除已加载完毕的图片
+    //   imgList1 = imgList1.filter((_, index) => !newArr.includes(index));
+    // },
   },
   mounted() {
-    this.initPic();
-    window.addEventListener("scroll", this.onPageScroll);
-    // this.canShow();
+    // this.lozyload();
   },
 };
 </script>
 
 <style lang="scss">
-// body {
-//   background-color: #d8e3e7;
-//   background-image: url("http://zhongguose.com/img/texture.png");
-// }
+.test2 {
+  width: 100%;
+}
 .waterfall {
   width: 90%;
   column-gap: 20px;
@@ -108,7 +136,8 @@ export default {
 }
 .mask {
   opacity: 0;
-  color: rgb(238, 13, 51);
+  // color: rgb(238, 13, 51);
+  color: rgb(0, 0, 0);
   font-size: 16px;
   overflow: hidden;
   position: absolute;
@@ -124,9 +153,9 @@ export default {
 .mask:hover {
   opacity: 1;
 }
-.mask :last-child {
-  margin: 30px;
-}
+// .mask:last-child {
+//   margin: 30px;
+// }
 img {
   width: 100%;
   background: #74ebd5; /* fallback for old browsers */
@@ -141,6 +170,12 @@ img {
     #74ebd5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+// img[lazy="loading"] {
+//   display: block;
+//   width: 50px;
+//   height: 50px;
+//   margin: 0 auto;
+// }
 
 p {
   line-height: 30px;

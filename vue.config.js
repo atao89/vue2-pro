@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-16 17:56:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-18 16:23:04
+ * @LastEditTime: 2021-10-19 09:05:03
  */
 const path = require('path')
 // function resolve(dir) {
@@ -141,7 +141,7 @@ module.exports = {
   devServer: {
     open: false, //是否自动弹出浏览器页面   
     host: "localhost",
-    port: "8080",
+    port: "8888",
     https: false, //是否使用https协议
     hotOnly: true, //是否开启热更新
     proxy: {
