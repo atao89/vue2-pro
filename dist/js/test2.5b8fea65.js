@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["test2"],{a866:function(t,e,s){"use strict";s.r(e);var n=function(){var t=this,e=t.$createElement,s=t._self._c||e;return s("div",{staticClass:"test2"},[t._v("test2")])},a=[],c={name:"Test2"},l=c,u=s("cba8"),i=Object(u["a"])(l,n,a,!1,null,null,null);e["default"]=i.exports}}]);
