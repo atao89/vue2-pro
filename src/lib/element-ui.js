@@ -4,10 +4,10 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:07:07
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-16 15:34:06
+ * @LastEditTime: 2022-02-21 23:01:44
  */
 import Vue from 'vue'
-import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, Avatar, Table, TableColumn, DatePicker, Select, Option, Pagination, Progress, Loading } from 'element-ui'
+import { Card, Button, Row, Col, Tag, Switch, Form, FormItem, Message, MessageBox, Input, Icon, Dropdown, DropdownMenu, DropdownItem, Popover, Tabs, TabPane, Container, Header, Main, Aside, Menu, Submenu, MenuItem, MenuItemGroup, Radio, RadioGroup, RadioButton, Scrollbar, Breadcrumb, BreadcrumbItem, Avatar, Table, TableColumn, DatePicker, Select, Option, Pagination, Progress, Loading, Link } from 'element-ui'
 import { CollapseTransition } from "element-ui/lib";
 import '@/assets/stylues/element-variables.scss'
 
@@ -49,6 +49,7 @@ Vue.component(Select.name, Select)
 Vue.component(Option.name, Option)
 Vue.component(Pagination.name, Pagination)
 Vue.component(Progress.name, Progress)
+Vue.component(Link.name, Link)
 Vue.use(Loading.directive)
 
 Vue.component(CollapseTransition.name, CollapseTransition)

@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-15 00:28:46
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-16 16:06:02
+ * @LastEditTime: 2022-02-21 21:44:30
 -->
 <template>
   <div class="home">
@@ -299,7 +299,6 @@
             </el-card>
           </div>
         </el-collapse-transition>
-        <!-- 123f -->
       </el-col>
     </el-row>
   </div>
@@ -308,7 +307,7 @@
 <script>
 import Vue from "vue";
 import echarts from "echarts";
-// import * as echarts from 'echarts'
+// import * as echarts from 'echarts/lib/echarts'
 import "echarts/lib/component/title";
 import "v-charts/lib/style.css";
 import VeLine from "v-charts/lib/line.common";

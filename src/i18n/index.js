@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-09-17 14:32:59
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-17 15:02:16
+ * @LastEditTime: 2022-02-21 22:44:48
  */
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
@@ -34,7 +34,8 @@ const language = languages.includes(ss.getItem('language'))
 
 const i18n = new VueI18n({
     messages,
-    locale: language
+    locale: language,
+    silentTranslationWarn: true, // 去除国际化警告
 })
 
 export default i18n
