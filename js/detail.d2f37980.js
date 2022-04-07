@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["detail"],{f90a:function(e,t,a){"use strict";a.r(t);var l=function(){var e=this,t=e.$createElement,a=e._self._c||t;return a("div",{staticClass:"detail"},[e._v(" detail组件 ")])},n=[],i={name:"NewsDetail"},s=i,c=a("2877"),u=Object(c["a"])(s,l,n,!1,null,null,null);t["default"]=u.exports}}]);
