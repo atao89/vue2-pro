@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-07-12 23:15:09
  * @LastEditors: 周涛
- * @LastEditTime: 2021-10-18 09:05:52
+ * @LastEditTime: 2022-04-07 14:53:30
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -62,6 +62,9 @@ router.beforeEach((to, from, next) => {
   if (to.path.indexOf('login') < 0 && !window.localStorage.getItem('USER_INFO')) {
     router.replace('/login');
     next();
+  }
+  if (document.title !== to.meta.title) {
+    document.title = to.meta.title;
   }
   next();
 })

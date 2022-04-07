@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["role"],{"80d6":function(e,l,n){"use strict";n.r(l);var t=function(){var e=this,l=e.$createElement,n=e._self._c||l;return n("div",{staticClass:"role"},[e._v("role")])},o=[],r={name:"Role"},s=r,a=n("2877"),c=Object(a["a"])(s,t,o,!1,null,null,null);l["default"]=c.exports}}]);
