@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-09-22 16:56:14
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-22 17:25:58
+ * @LastEditTime: 2022-10-11 13:20:32
 -->
 <template>
   <draggable
@@ -58,4 +58,3 @@ export default {
   },
 };
 </script>
-</style>
