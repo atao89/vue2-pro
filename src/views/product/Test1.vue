@@ -14,22 +14,16 @@
 </template>
 
 <script>
-export default {
-  name: "Test1",
-};
-</script>
-
-<script>
-let d = [];
+let data = [];
 for (let i = 1; i <= 100000; i++) {
-  d.push({ id: i, value: i });
+  data.push({ id: i, value: i });
 }
 
 export default {
-  name: "App",
+  name: "Test1",
   data() {
     return {
-      data: d,
+      data,
     };
   },
 };
