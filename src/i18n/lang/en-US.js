@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-09-22 16:46:42
  */
 export default {
-  title: 'xx network background management system',
+  title: 'no name background management system',
   entry: 'Entry',
   welcome: 'Welcome You',
   loginout: 'Loginout',

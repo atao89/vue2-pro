@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-09-22 16:46:08
  */
 export default {
-  title: 'xx网后台管理系统',
+  title: '无名后台管理系统',
   entry: '快捷入口',
   welcome: '欢迎您',
   loginout: '退出',

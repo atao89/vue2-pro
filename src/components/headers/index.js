@@ -4,7 +4,7 @@
  * @Author: 周涛
  * @Date: 2021-08-18 16:06:20
  * @LastEditors: 周涛
- * @LastEditTime: 2021-09-22 16:27:54
+ * @LastEditTime: 2023-03-21 22:36:35
  */
 import store, { types } from '@/store'
 import { mapGetters } from 'vuex'
@@ -75,7 +75,7 @@ export default {
   },
 
   render() {
-    const icon = <svg-icon icon-class={'menu-fold'} class-name={'menu-fold'} onclick={this.openOrCloseMenu} />
+    const icon = <svg-icon icon-class={store.state[types.MENU_COLLAPSE] ? 'menu-unfold' : 'menu-fold'} class-name={store.state[types.MENU_COLLAPSE] ? 'menu-unfold' : 'menu-fold'} onclick={this.openOrCloseMenu} />
     // const avatar = <el-avatar size={'small'} src={this.avatarUrl}></el-avatar>
     return (
       <div
